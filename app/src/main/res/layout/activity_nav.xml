@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userName"
+            type="com.example.healthapp.data.model.LoggedInUser" />
+
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="733dp"
+        android:background="@color/screenBackground"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+        <include
+            android:id="@+id/app_bar_nav"
+            layout="@layout/app_bar_nav"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_bold" />
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/screenBackground"
+            android:fitsSystemWindows="true"
+            android:fontFamily="@font/montserrat_bold"
+            app:headerLayout="@layout/nav_header_nav"
+            app:itemIconTint="@color/white"
+            app:itemShapeFillColor="#001CC1BC"
+            app:itemTextColor="#FFFFFF"
+            app:menu="@menu/activity_nav_drawer" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

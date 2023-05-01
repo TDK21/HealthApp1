@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">HealthApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Username</string>
+    <string name="nav_header_subtitle">User card number</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_measure">Measure</string>
+    <string name="menu_instruction">Instruction</string>
+    <string name="menu_about">About application</string>
+    <string name="measure">Measure</string>
+    <string name="select_type_of_measure">Select type of measure</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome "</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="headAche">Do you have head ache?</string>
+    <string name="instruction">A lot of shitty text we will be add later</string>
+    <string name="number_of_movements">Number of movements</string>
+    <string name="feelings">How you feel youself?</string>
+    <string-array name="types_measure">
+        <item>Left Knee</item>
+        <item>Left Elbow</item>
+        <item>Right Knee</item>
+        <item>Right Elbow</item>
+    </string-array>
+    <string-array name="headache">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="feel">
+        <item>Perfect</item>
+        <item>Very-well</item>
+        <item>Normal</item>
+        <item>Bad</item>
+        <item>Awful</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="distance">Distance</string>
+    <string name="angle_of_straightening">Angle of straightening</string>
+    <string name="start">Start</string>
+    <string name="finish">Finish</string>
+    <string name="angle_of_bending">Angle of bending</string>
+    <string name="send_data">Send Data</string>
+    <string name="start_measure">Start Measure</string>
+</resources>

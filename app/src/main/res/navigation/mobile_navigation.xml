@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    android:background="@color/screenBackground"
+    app:startDestination="@id/nav_start">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.healthapp.ui.measure.MeasureFragment"
+        android:label="@string/menu_measure"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_bold"
+        tools:layout="@layout/fragment_measure" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.healthapp.ui.instruction.InstructionFragment"
+        android:label="@string/menu_instruction"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_bold"
+        tools:layout="@layout/fragment_instruction" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.healthapp.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_bold"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_gonio"
+        android:name="com.example.healthapp.ui.gonio.GonioFragment"
+        android:label="Gonio"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_bold"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_start"
+        android:name="com.example.healthapp.ui.start_measure.StartFragment"
+        android:label="@string/start_measure"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_bold"
+        tools:layout="@layout/fragment_about" />
+
+</navigation>
