@@ -9,12 +9,12 @@ open class DataModel: ViewModel() {
         MutableLiveData<String>()
     }
 
-    val elbowKnee: MutableLiveData<Int> by lazy {
-        MutableLiveData<Int>()
+    val elbowKnee: MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
     }
 
-    val leftRight: MutableLiveData<Int> by lazy {
-        MutableLiveData<Int>()
+    val leftRight: MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
     }
 
     val flexionAngle: MutableLiveData<Double> by lazy {

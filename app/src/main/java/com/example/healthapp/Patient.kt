@@ -3,8 +3,8 @@ package com.example.healthapp
 
 data class Patient(
     val cardNumber: String,
-    val elbowKnee: Int,
-    val leftRight: Int,
+    val elbowKnee: String,
+    val leftRight: String,
     val flexionAngle: Double,
     val extensionAngle: Double,
     val countBend: Int,

@@ -112,8 +112,8 @@ class GonioFragment : Fragment() {
 
     private fun sendJSON(){
         val card = dataModel.cardNumber.value!!
-        val elbowKnee: Int = dataModel.elbowKnee.value!!
-        val leftRight: Int = dataModel.leftRight.value!!
+        val elbowKnee: String = dataModel.elbowKnee.value!!
+        val leftRight: String = dataModel.leftRight.value!!
         val flex: Double = dataModel.flexionAngle.value!!
         val bend: Double = dataModel.extensionAngle.value!!
         val countBend: Int = dataModel.countBend.value!!
@@ -121,7 +121,7 @@ class GonioFragment : Fragment() {
         val state: Int = dataModel.state.value!!
         var distance: Int = dataModel.distance.value!!
         var patientList = Patient(card, elbowKnee, leftRight, flex, bend, countBend, dizz, state, distance)
-        if (elbowKnee == 0){
+        if (elbowKnee == "knee"){
             patientList = Patient(card, elbowKnee, leftRight, flex, bend, countBend, dizz, state, null)
         }
         val jsonArray = mapper.writeValueAsString(patientList)
