@@ -52,8 +52,10 @@ class NavActivity : AppCompatActivity() {
         val navViewHeaderBinding: NavHeaderNavBinding = NavHeaderNavBinding.bind(viewHeader)
         val navController = findNavController(R.id.nav_host_fragment_content_nav)
         var userID = "1"
-        val userFName = intent.getStringExtra("userFName").toString()
-        val cardNumber = intent.getStringExtra("cardNumber").toString()
+        //val userFName = intent.getStringExtra("userFName").toString()
+        //val cardNumber = intent.getStringExtra("cardNumber").toString()
+        val userFName = "Фамилия Имя"
+        val cardNumber = "000001"
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -81,41 +83,6 @@ class NavActivity : AppCompatActivity() {
             .replace(idHolder, f).commit()
     }
 
-
-    override fun onStart() {
-        super.onStart()
-        //toastMeState("ON_START")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        //toastMeState("ON_RESUME")
-    }
-
-    override fun onPostResume() {
-        super.onPostResume()
-        //toastMeState("onPostResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        //toastMeState("ON_PAUSE")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        //toastMeState("ON_STOP")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        //toastMeState("onRestart")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        //toastMeState("ON_DESTROY")
-    }
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

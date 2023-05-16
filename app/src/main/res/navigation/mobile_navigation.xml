@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/nav_gonio"
         android:name="com.example.healthapp.ui.gonio.GonioFragment"
-        android:label="Gonio"
+        android:label="@string/measure"
         android:textColor="@color/white"
         android:fontFamily="@font/montserrat_bold"
         tools:layout="@layout/fragment_about" />

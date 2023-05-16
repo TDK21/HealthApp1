@@ -20,8 +20,8 @@ class LoginDataSource {
             //val jsonString = """{"namePatient":"Patient","card":"000000"}"""
             //val userFromJson = mapper.readValue<PatientInfo>(jsonString)
             //Вытащить значения из JSON и отправить в приложение
-            val nameUser = "Parient"
-            val numberCard = "000000"
+            val nameUser = "Фамилия Имя Отчество"
+            val numberCard = "000001"
             val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), nameUser, numberCard)
             return Result.Success(fakeUser)
         } catch (e: Throwable) {
