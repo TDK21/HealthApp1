@@ -37,6 +37,7 @@ class NavActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNavBinding
     private val dataModel: DataModel by viewModels()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

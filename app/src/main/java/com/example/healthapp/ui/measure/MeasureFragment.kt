@@ -25,6 +25,7 @@ import com.example.healthapp.R
 import com.example.healthapp.databinding.FragmentMeasureBinding
 import com.example.healthapp.ui.gonio.GonioFragment
 import com.example.healthapp.ui.gonio.GonioViewModel
+import java.util.*
 
 
 class MeasureFragment : Fragment() {
@@ -103,20 +104,6 @@ class MeasureFragment : Fragment() {
         val parts = selectedHumanPart.split("\\s".toRegex()).toTypedArray()
         dataModel.leftRight.value = parts[0]
         dataModel.elbowKnee.value = parts[1]
-
-       /* if (parts[0] == "Right"){
-            dataModel.leftRight.value = 1
-        }
-        else{
-            dataModel.leftRight.value = 0
-        }
-
-        if (parts[1] == "Elbow"){
-            dataModel.elbowKnee.value = 0
-        }
-        else{
-            dataModel.elbowKnee.value = 1
-        }*/
     }
 
     override fun onDestroyView() {

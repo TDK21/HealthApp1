@@ -22,6 +22,7 @@ import com.example.healthapp.R
 import kotlin.math.*
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import java.io.File
+import java.util.Calendar
 
 @Suppress("DEPRECATION")
 class GonioFragment : Fragment() {
@@ -111,7 +112,8 @@ class GonioFragment : Fragment() {
     }
 
     private fun sendJSON(){
-        val card = dataModel.cardNumber.value!!
+        //val card = dataModel.cardNumber.value!!
+        val card = "000001"
         val elbowKnee: String = dataModel.elbowKnee.value!!
         val leftRight: String = dataModel.leftRight.value!!
         val flex: Double = dataModel.flexionAngle.value!!
@@ -124,11 +126,21 @@ class GonioFragment : Fragment() {
         if (elbowKnee == "knee"){
             patientList = Patient(card, elbowKnee, leftRight, flex, bend, countBend, dizz, state, null)
         }
+        getTime()
         val jsonArray = mapper.writeValueAsString(patientList)
         Log.d("MyLog", jsonArray)
     }
 
 
+    private fun getTime(){
+        val currentDate = Calendar.getInstance()
+        val year = currentDate.get(Calendar.YEAR)
+        val month = currentDate.get(Calendar.MONTH)
+        val day = currentDate.get(Calendar.DAY_OF_MONTH)
+        val hour = currentDate.get(Calendar.HOUR_OF_DAY)
+        val minute = currentDate.get(Calendar.MINUTE)
+        Log.d("MyLog", "$hour:$minute - $day.$month.$year")
+    }
     private fun convert(resultFirst: Float?, resultFinish: Float?): Double?{
         val first: Float = resultFirst!!
         val second: Float = resultFinish!!

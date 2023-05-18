@@ -8,7 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.navigation.fragment.findNavController
+import com.example.healthapp.NavActivity.Companion.CHANNEL_ID
+import com.example.healthapp.NavActivity.Companion.NOTIFICATION_ID
 import com.example.healthapp.R
 import com.example.healthapp.databinding.FragmentAboutBinding
 import com.example.healthapp.databinding.FragmentStartBinding
@@ -18,6 +22,7 @@ class StartFragment : Fragment() {
 
     private var _binding: FragmentStartBinding? = null
     private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
