@@ -9,9 +9,21 @@
             android:icon="?attr/actionModePasteDrawable"
             android:title="@string/start_measure" />
         <item
+            android:id="@+id/calendarFragment"
+            android:icon="@android:drawable/ic_lock_idle_alarm"
+            android:title="@string/calendar" />
+        <item
             android:id="@+id/nav_gallery"
             android:icon="?android:attr/actionModeFindDrawable"
             android:title="@string/menu_instruction" />
+        <item
+            android:id="@+id/historyFragment"
+            android:icon="@android:drawable/ic_dialog_dialer"
+            android:title="@string/history" />
+        <item
+            android:id="@+id/chatFragmentFragment"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="@string/sendLinks" />
         <item
             android:id="@+id/nav_about"
             android:icon="@android:drawable/ic_dialog_info"

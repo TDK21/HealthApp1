@@ -17,6 +17,7 @@ import android.util.Log
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.healthapp.DataModel
+import com.example.healthapp.HistoryDataModel
 import com.example.healthapp.Patient
 import com.example.healthapp.R
 import kotlin.math.*
@@ -36,6 +37,7 @@ class GonioFragment : Fragment() {
     private val dataModel: DataModel by activityViewModels()
     private lateinit var jsString: String
     private val mapper = jacksonObjectMapper()
+    private val historyDataModel: HistoryDataModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -122,24 +124,46 @@ class GonioFragment : Fragment() {
         val dizz: Boolean = dataModel.dizziness.value!!
         val state: Int = dataModel.state.value!!
         var distance: Int = dataModel.distance.value!!
-        var patientList = Patient(card, elbowKnee, leftRight, flex, bend, countBend, dizz, state, distance)
+        val date = getTime()
+        var patientList: Patient
         if (elbowKnee == "knee"){
-            patientList = Patient(card, elbowKnee, leftRight, flex, bend, countBend, dizz, state, null)
+            patientList = Patient(card, elbowKnee, leftRight, flex, bend, countBend, dizz, state, null, date)
         }
-        getTime()
+        else{
+            patientList = Patient(card, elbowKnee, leftRight, flex, bend, countBend, dizz, state, distance, date)
+        }
         val jsonArray = mapper.writeValueAsString(patientList)
         Log.d("MyLog", jsonArray)
+        saveHistory(date,leftRight, elbowKnee, dizz, countBend, state, distance, flex, bend)
+
     }
 
+    private fun saveHistory(date: String, leftRight: String, elbowKnee: String, dizz: Boolean, countBend: Int, state: Int, distance: Int, flex: Double, bend: Double){
+        val historyString = "--------------------------------------\n" + "$date\n" + "Сустав: $leftRight $elbowKnee\n" +
+                "Головная боль: $dizz\n" +
+                "Количество движений: $countBend\n" +
+                "Самочувствие: $state\n" +
+                "Пройденное расстояние: $distance\n" +
+                "Углы измерений: $flex и $bend\n"
+        if(historyDataModel.history.value == null){
+            historyDataModel.history.value = historyString
+        }
+        else {
+            val newHistory = historyString + historyDataModel.history.value
+            historyDataModel.history.value = newHistory
+        }
+    }
 
-    private fun getTime(){
+    private fun getTime(): String{
         val currentDate = Calendar.getInstance()
         val year = currentDate.get(Calendar.YEAR)
         val month = currentDate.get(Calendar.MONTH)
         val day = currentDate.get(Calendar.DAY_OF_MONTH)
         val hour = currentDate.get(Calendar.HOUR_OF_DAY)
         val minute = currentDate.get(Calendar.MINUTE)
+        val curTime = "$hour:$minute - $day.$month.$year"
         Log.d("MyLog", "$hour:$minute - $day.$month.$year")
+        return curTime
     }
     private fun convert(resultFirst: Float?, resultFinish: Float?): Double?{
         val first: Float = resultFirst!!

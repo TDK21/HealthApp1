@@ -45,5 +45,19 @@
         android:textColor="@color/white"
         android:fontFamily="@font/montserrat_bold"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/chatFragmentFragment"
+        android:name="com.example.healthapp.ui.chat.ChatFragmentFragment"
+        android:label="@string/sendLinks"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_bold" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.healthapp.ui.history.HistoryFragment"
+        android:label="@string/history_fragment" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.healthapp.ui.calendar.CalendarFragment"
+        android:label="@string/calender_fragment" />
 
 </navigation>

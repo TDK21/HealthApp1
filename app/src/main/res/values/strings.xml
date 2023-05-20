@@ -53,4 +53,13 @@
     <string name="start_measure">Start Measure</string>
     <string name="log_out">Log out</string>
     <string name="read_instruction_below">Read Instruction Below</string>
+    <string name="sendLinks">Social media</string>
+    <string name="emailBtn" translatable="false">EMAIL</string>
+    <string name="telegramBtn">Telegram</string>
+    <string name="wrong_dataBtn">Wrong Data</string>
+    <string name="history">History</string>
+    <string name="calendar">Calendar</string>
+    <string name="instruction2">Instr</string>
+    <string name="history_fragment">History</string>
+    <string name="calender_fragment">Calendar</string>
 </resources>

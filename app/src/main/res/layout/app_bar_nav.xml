@@ -19,6 +19,15 @@
             android:background="?attr/colorAccent"
             app:popupTheme="@style/Theme.HealthApp.PopupOverlay" />
 
+        <Button
+            android:id="@+id/notifyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_nav" />
