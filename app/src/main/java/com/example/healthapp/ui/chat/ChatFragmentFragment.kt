@@ -50,7 +50,7 @@ class ChatFragmentFragment : Fragment() {
 
         val buttonWrongData: Button = binding.wrongDataBtn
         buttonWrongData.setOnClickListener {
-            Toast.makeText(activity, "Сообщил об ошибке", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "Сообщение об ошибке отправлено", Toast.LENGTH_LONG).show()
             //Add some code like send to server etc.
         }
 
