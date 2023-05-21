@@ -54,30 +54,32 @@
             app:layout_constraintTop_toBottomOf="@+id/textHumanPart" />
 
         <TextView
-            android:id="@+id/textHeadAche"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/headAche"
-            android:textAlignment="center"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+                android:id="@+id/textHeadAche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/headAche"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner"
+                android:visibility="gone" />
 
         <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:entries="@array/headache"
-            android:fontFamily="@font/montserrat_bold"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textHeadAche" />
+                android:id="@+id/spinner2"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:entries="@array/headache"
+                android:fontFamily="@font/montserrat_bold"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textHeadAche"
+                android:visibility="gone" />
 
         <TextView
             android:id="@+id/textNumberOfMovement"

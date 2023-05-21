@@ -38,6 +38,14 @@ class GonioFragment : Fragment() {
     private lateinit var jsString: String
     private val mapper = jacksonObjectMapper()
     private val historyDataModel: HistoryDataModel by activityViewModels()
+    private var magnetic = FloatArray(9)
+    private var gravity = FloatArray(9)
+
+    private var accrs = FloatArray(3)
+    private var magf = FloatArray(3)
+    private var values = FloatArray(3)
+
+    lateinit var sManager: SensorManager
 
 
     override fun onCreateView(
@@ -55,7 +63,7 @@ class GonioFragment : Fragment() {
 
         val tvSensor = binding.textValues
         sensorManager = activity?.getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        val sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION)
+        /*val sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION)
         val sListener = object : SensorEventListener{
             override fun onSensorChanged(p0: SensorEvent?) {
                 val value = p0?.values
@@ -67,8 +75,32 @@ class GonioFragment : Fragment() {
 
             }
 
+        }*/
+
+        val sensor = sManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+        val sensor2 = sManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
+        val sListener = object : SensorEventListener {
+            override fun onSensorChanged(event: SensorEvent?) {
+                when (event?.sensor?.type) {
+                    Sensor.TYPE_ACCELEROMETER -> accrs = event.values.clone()
+                    Sensor.TYPE_MAGNETIC_FIELD -> magf = event.values.clone()
+                }
+
+                SensorManager.getRotationMatrix(gravity, magnetic, accrs, magf)
+                val outGravity = FloatArray(9)
+                SensorManager.remapCoordinateSystem(
+                    gravity,
+                    SensorManager.AXIS_X,
+                    SensorManager.AXIS_Z,
+                    outGravity
+                )
+                SensorManager.getOrientation(outGravity, values)
+                val degree = values[2] * 57.2958f
+            }
         }
-        sensorManager.registerListener(sListener, sensor, SensorManager.SENSOR_DELAY_NORMAL)
+        sManager.registerListener(sListener, sensor, SensorManager.SENSOR_DELAY_NORMAL)
+        sManager.registerListener(sListener, sensor2, SensorManager.SENSOR_DELAY_NORMAL)
+        //sensorManager.registerListener(sListener, sensor, SensorManager.SENSOR_DELAY_NORMAL)
 
         val startStraighteningBtn: Button = binding.buttonStartStraightening
 
@@ -134,15 +166,14 @@ class GonioFragment : Fragment() {
         }
         val jsonArray = mapper.writeValueAsString(patientList)
         Log.d("MyLog", jsonArray)
-        saveHistory(date,leftRight, elbowKnee, dizz, countBend, state, distance, flex, bend)
+        saveHistory(date,leftRight, elbowKnee, countBend, state, distance, flex, bend)
 
     }
 
-    private fun saveHistory(date: String, leftRight: String, elbowKnee: String, dizz: Boolean, countBend: Int, state: Int, distance: Int, flex: Double, bend: Double){
+    private fun saveHistory(date: String, leftRight: String, elbowKnee: String, countBend: Int, state: Int, distance: Int, flex: Double, bend: Double){
         val historyString = "--------------------------------------\n" + "$date\n" + "Сустав: $leftRight $elbowKnee\n" +
-                "Головная боль: $dizz\n" +
                 "Количество движений: $countBend\n" +
-                "Самочувствие: $state\n" +
+                "Самочувствие: Отлично\n" +
                 "Пройденное расстояние: $distance\n" +
                 "Углы измерений: $flex и $bend\n"
         if(historyDataModel.history.value == null){

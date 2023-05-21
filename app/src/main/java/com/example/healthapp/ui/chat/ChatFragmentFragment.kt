@@ -11,7 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.healthapp.HistoryDataModel
 import com.example.healthapp.NavActivity
 import com.example.healthapp.R
 import com.example.healthapp.databinding.FragmentChatBinding
@@ -21,6 +23,7 @@ class ChatFragmentFragment : Fragment() {
 
     private var _binding: FragmentChatBinding? = null
     private val binding get() = _binding!!
+    private val historyDataModel: HistoryDataModel by activityViewModels()
 
     private lateinit var viewModel: ChatViewModel
 
@@ -51,12 +54,22 @@ class ChatFragmentFragment : Fragment() {
         val buttonWrongData: Button = binding.wrongDataBtn
         buttonWrongData.setOnClickListener {
             Toast.makeText(activity, "Сообщение об ошибке отправлено", Toast.LENGTH_LONG).show()
-            //Add some code like send to server etc.
+            saveError()
         }
 
         return root
 
     }
 
+    private fun saveError(){
+        val historyString = "Данное измерение выполнено неправильно\n"
+        if(historyDataModel.history.value == null){
+            historyDataModel.history.value = historyString
+        }
+        else {
+            val newHistory = historyString + historyDataModel.history.value
+            historyDataModel.history.value = newHistory
+        }
+    }
 
 }

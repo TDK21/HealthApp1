@@ -80,7 +80,8 @@ class MeasureFragment : Fragment() {
     }
 
     private fun headAche(){
-        val selectedHeadAche = binding.spinner2.selectedItem.toString()
+        val selectedHeadAche = "Yes"
+        //val selectedHeadAche = binding.spinner2.selectedItem.toString()
         if (selectedHeadAche == "Yes"){
             dataModel.dizziness.value = true
         }
