@@ -29,44 +29,44 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/emailBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
-            android:text="@string/emailBtn"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linkHeader" />
+                android:id="@+id/emailBtn"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="160dp"
+                android:text="@string/emailBtn"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linkHeader" />
 
         <Button
-            android:id="@+id/telegramBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="@string/telegramBtn"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailBtn" />
+                android:id="@+id/telegramBtn"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/telegramBtn"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailBtn" />
 
         <Button
-            android:id="@+id/wrong_dataBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
-            android:text="@string/wrong_dataBtn"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/telegramBtn" />
+                android:id="@+id/wrong_dataBtn"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="180dp"
+                android:text="@string/wrong_dataBtn"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/telegramBtn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

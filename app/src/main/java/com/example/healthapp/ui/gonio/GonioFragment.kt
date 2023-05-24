@@ -214,10 +214,27 @@ class GonioFragment : Fragment() {
     /* Функция сохранения отчета об измерениях.
     * patientList - объект с данными об измерении */
     private fun saveHistory(patientList: Patient){
+        val part: String //Сустав
+        val orientation: String // Ориентация
+        /* Разбор выбранного сустава для отчета измерения */
+        if (patientList.elbowKnee == "колено"){
+            part = "Коленный"
+        }
+        else{
+            part = "Локтевой"
+        }
+        if (patientList.leftRight == "Левое" || patientList.leftRight == "Левый"){
+            orientation = "Левая"
+        }
+        else {
+            orientation = "Правая"
+        }
+
         val historyString =
             "--------------------------------------\n " +
-                    "${patientList.date}\n" + "Сустав: " +
-                "${patientList.leftRight} ${patientList.elbowKnee}\n" +
+                    "${patientList.date}\n" +
+                    "Сустав: $part\n" +
+                "Ориентация: $orientation\n" +
                 "Количество движений: ${patientList.countBend}\n" +
                 "Самочувствие: ${patientList.state}\n" +
                 "Пройденное расстояние: ${patientList.distance}\n" +
